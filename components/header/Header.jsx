@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full h-12 flex items-center text-sky-100 font-bold px-4 py-6">
+    <header className="w-full h-16 flex items-center text-sky-100 font-bold px-4 py-6">
       <Link href="/" className="w-1/2 h-1/2 md:w-full md:h-full">
           <svg className="w-8 md:w-14 h-8 md:h-14" fill="none">
             <path

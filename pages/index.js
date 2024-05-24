@@ -39,7 +39,7 @@ export default function Home() {
             />
             <Button
               href="/room"
-              classes={
+              className={
                 "w-full md:w-1/2 p-1 mx-auto rounded-lg border-b border-sky-800 bg-gradient-to-r from-sky-900 to-sky-500 hover:bg-gradient-to-l text-center text-gray-100 py-4 text-sm md:text-base"
               }
             >

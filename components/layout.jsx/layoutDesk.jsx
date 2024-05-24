@@ -1,11 +1,11 @@
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 
-export default function LayoutDesk({children}) {
+export default function LayoutDesk({ children }) {
   return (
     <>
       <Header />
-      {children}
+      <div className="w-full mt-8 px-10">{children}</div>
       <Footer />
     </>
   );
