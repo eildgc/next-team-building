@@ -48,6 +48,14 @@ export default function Header() {
           </Link>
         </li>
         <li className="w-18">
+          <Link
+            href="/pricing"
+            className="hover:underline hover:decoration-sky-300 py-4"
+          >
+            Pricing
+          </Link>
+        </li>
+        <li className="w-18">
           <a
             className="w-6 h-6 hover:underline hover:decoration-sky-950"
             href="https://github.com/eildgc/team-building"
