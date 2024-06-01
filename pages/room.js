@@ -1,12 +1,40 @@
+import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import LayoutDesk from "@/components/layout.jsx/layoutDesk";
 import Image from "next/image";
 import Link from "next/link";
-import toast from "react-hot-toast";
 
 // TODO copy link
 // TODO create user, users
 
 export default function Room() {
+  const OPTIONS = { dragFree: true };
+  const SLIDES = [
+    {
+      id: 1,
+      description:
+        "A continuación, con tu equipo elijan una tarjeta sobre la que trabajar en esta sesión. Recuerda respetar los turnos de cada integrante de tu equipo.",
+    },
+    {
+      id: 2,
+      description:
+        "¿Cuál valor has trabajado en los últimos 2 meses? Agrega una descripción de como lo has aplicado.",
+    },
+    {
+      id: 3,
+      description:
+        "Por turnos, reconoce el trabajo, cualidades y actitudes del integrante del equipo elegido",
+    },
+  ];
+  const slideElements = SLIDES.map((slide, index) => (
+    <div className="grid-start-1 shrink" key={index}>
+      <div className="w-72 md:w-96 h-40 p-8 bg-sky-950 border border-sky-900 rounded-md text-sky-50 relative">
+        <span className="absolute z-10 top-0 right-0 pr-6 pt-2">
+          {slide.id}
+        </span>
+        {slide.description}
+      </div>
+    </div>
+  ));
   return (
     <LayoutDesk>
       <div className="w-full flex flex-col md:flex-row gap-4 md:px-4 py-4 justify-center">
@@ -27,7 +55,7 @@ export default function Room() {
             >
               <path d="M7.39 16.539a8 8 0 1 1 9.221 0l2.083 4.76a.5.5 0 0 1-.459.701H5.765a.5.5 0 0 1-.459-.7zm.729-5.569a4.002 4.002 0 0 0 7.763 0l-1.941-.485a2 2 0 0 1-3.882 0z" />
             </svg>
-            <p className="text-sm">Eldani</p>
+            <p className="text-sm text-sky-950">Eldani</p>
             <Image
               unoptimized
               className="w-8 transition ease-in-out hover:scale-125 ml-auto"
@@ -45,7 +73,7 @@ export default function Room() {
               <path d="M7.39 16.539a8 8 0 1 1 9.221 0l2.083 4.76a.5.5 0 0 1-.459.701H5.765a.5.5 0 0 1-.459-.7zm.729-5.569a4.002 4.002 0 0 0 7.763 0l-1.941-.485a2 2 0 0 1-3.882 0z" />
             </svg>
 
-            <p className="text-sm">Luis</p>
+            <p className="text-sm text-sky-950">Luis</p>
             <Image
               unoptimized
               className="w-8 transition ease-in-out hover:scale-125 ml-auto"
@@ -63,7 +91,7 @@ export default function Room() {
               <path d="M7.39 16.539a8 8 0 1 1 9.221 0l2.083 4.76a.5.5 0 0 1-.459.701H5.765a.5.5 0 0 1-.459-.7zm.729-5.569a4.002 4.002 0 0 0 7.763 0l-1.941-.485a2 2 0 0 1-3.882 0z" />
             </svg>
 
-            <p className="text-sm">Usuario1</p>
+            <p className="text-sm text-sky-950">Usuario1</p>
             <Image
               unoptimized
               className="w-8 transition ease-in-out hover:scale-125 ml-auto"
@@ -75,39 +103,7 @@ export default function Room() {
           </div>
         </aside>
         <div className="flex flex-col gap-8 md:pl-10">
-          <div className="w-full flex flex-col">
-            <h1 className="text-xl text-sky-100">Tarjetas</h1>
-            <p className="text-sky-100 text-sm md:text-base">
-              A continuación, con tu equipo elijan una tarjeta sobre la que
-              trabajar en esta sesión. Recuerda respetar los turnos de cada
-              integrante de tu equipo.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-8 grow">
-            <div className="w-full grid-start-1 shrink">
-              <div className="w-full">
-                <div className="w-72 md:w-96 h-40 p-8 bg-sky-950 border border-sky-900 rounded-md mx-auto text-sky-50">
-                  ¿Cuál valor has trabajado en los últimos 2 meses? Agrega una
-                  descripción de como lo has aplicado.
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:col-start-3">
-              <div className="w-full">
-                <div className="w-72 md:w-96 h-40 p-8 bg-sky-950 border border-sky-900 rounded-md mx-auto text-sky-50">
-                  Alguna cualidad que te gustaría que tu equipo te reconociera
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:row-start-2 md:col-span-4">
-              <div className="w-full">
-                <div className="w-72 md:w-96 h-40 p-8 bg-sky-950 border border-sky-900 rounded-md mx-auto text-sky-50">
-                  Por turnos, reconoce el trabajo, cualidades y actitudes del
-                  integrante del equipo elegido
-                </div>
-              </div>
-            </div>
-          </div>
+          <EmblaCarousel slides={slideElements} options={OPTIONS} />
         </div>
       </div>
     </LayoutDesk>
