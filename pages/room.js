@@ -2,36 +2,27 @@ import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import LayoutDesk from "@/components/layout.jsx/layoutDesk";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 // TODO copy link
 // TODO create user, users
 
 export default function Room() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    axios.get("/api/cards").then((response) => setCards(response.data));
+  }, []);
+
   const OPTIONS = { dragFree: true };
-  const SLIDES = [
-    {
-      id: 1,
-      description:
-        "A continuación, con tu equipo elijan una tarjeta sobre la que trabajar en esta sesión. Recuerda respetar los turnos de cada integrante de tu equipo.",
-    },
-    {
-      id: 2,
-      description:
-        "¿Cuál valor has trabajado en los últimos 2 meses? Agrega una descripción de como lo has aplicado.",
-    },
-    {
-      id: 3,
-      description:
-        "Por turnos, reconoce el trabajo, cualidades y actitudes del integrante del equipo elegido",
-    },
-  ];
-  const slideElements = SLIDES.map((slide, index) => (
+  const slideElements = cards.map((card, index) => (
     <div className="grid-start-1 shrink" key={index}>
       <div className="w-72 md:w-96 h-40 p-8 bg-sky-950 border border-sky-900 rounded-md text-sky-50 relative">
         <span className="absolute z-10 top-0 right-0 pr-6 pt-2">
-          {slide.id}
+          {index + 1}
         </span>
-        {slide.description}
+        {card.description}
       </div>
     </div>
   ));
