@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import MainCard from "@/components/mainCard";
 
 // TODO copy link
 // TODO create user, users
@@ -17,14 +18,7 @@ export default function Room() {
 
   const OPTIONS = { dragFree: true };
   const slideElements = cards.map((card, index) => (
-    <div className="grid-start-1 shrink" key={index}>
-      <div className="w-72 md:w-96 h-40 p-8 bg-sky-950 border border-sky-900 rounded-md text-sky-50 relative">
-        <span className="absolute z-10 top-0 right-0 pr-6 pt-2">
-          {index + 1}
-        </span>
-        {card.description}
-      </div>
-    </div>
+      <MainCard key={index} description={card.description} counter={index + 1} />
   ));
   return (
     <LayoutDesk>
