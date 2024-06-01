@@ -1,42 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
+import LoginButton from "../LoginButton";
 
 export default function Header() {
+  
   return (
     <header className="w-full h-16 flex items-center text-sky-100 font-bold px-4 py-6">
-      <Link href="/" className="w-1/2 h-1/2 md:w-full md:h-full">
-          <svg className="w-8 md:w-14 h-8 md:h-14" fill="none">
-            <path
-              fill="#D9D9D9"
-              stroke="#2B599B"
-              stroke-width="4"
-              d="M32.737 20h-9.632L19 27.579 23.105 35h9.632L37 27.579 32.737 20Z"
-            />
-            <path
-              stroke="#2B9B73"
-              stroke-width="4"
-              d="M32.737 2h-9.632L19 9.579 23.105 17h9.632L37 9.579 32.737 2Z"
-            />
-            <path
-              stroke="#2B599B"
-              stroke-width="4"
-              d="M15.974 12H6.877L3 18.568 6.877 25h9.097L20 18.568 15.974 12ZM48.974 12h-9.097L36 18.568 39.877 25h9.097L53 18.568 48.974 12Z"
-            />
-            <path
-              stroke="#9B2B90"
-              stroke-width="4"
-              d="M15.974 29H6.877L3 36.074 6.877 43h9.097L20 36.074 15.974 29Z"
-            />
-            <path
-              stroke="#2B599B"
-              stroke-width="4"
-              d="M32.737 38h-9.632L19 45.074 23.105 52h9.632L37 45.074 32.737 38Z"
-            />
-            <path
-              stroke="#2B9B73"
-              stroke-width="4"
-              d="M48.974 29h-9.097L36 36.074 39.877 43h9.097L53 36.074 48.974 29Z"
-            />
-          </svg>
+      <Link href="/" className="w-1/2 h-1/2 md:w-full md:h-20">
+          <Image unoptimized src={`/assets/litech-32x32.png`} width={32} height={32} alt="logo"/>
       </Link>
       <ul className="w-full flex gap-4 md:gap-10 items-center justify-center md:justify-end text-sm">
         <li className="w-18">
@@ -55,6 +26,9 @@ export default function Header() {
             Pricing
           </Link>
         </li>
+        <li>
+        <LoginButton className={"hover:underline hover:decoration-sky-300 py-4"} />
+        </li>
         <li className="w-18">
           <a
             className="w-6 h-6 hover:underline hover:decoration-sky-950"
@@ -69,6 +43,7 @@ export default function Header() {
             </svg>
           </a>
         </li>
+        
       </ul>
     </header>
   );

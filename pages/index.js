@@ -1,18 +1,13 @@
-import Button from "@/components/Button";
+import Button from "@/components/ui/button/Button";
 import Card from "@/components/card/Card";
 import LayoutDesk from "@/components/layout.jsx/layoutDesk";
-import LoginButton from "@/components/LoginButton";
-
-// slug - dynamic value
-// stripe
-//
+import CreateRoom from "@/components/CreateRoom";
 
 export default function Home() {
   return (
     <LayoutDesk>
-      <main class="w-full flex flex-col gap-4 md:gap-20 mx-auto px-20 py-8">
-        <LoginButton />
-        <div class="flex justify-center items-center flex-col md:flex-row gap-4 md:gap-14 mt-14 md:mt-0">
+      <main class="w-full flex flex-col gap-4 md:gap-36 mx-auto px-20 py-8">
+        <div class="flex justify-center items-center flex-col md:flex-row gap-4 md:gap-14 mt-14 md:mt-6">
           <div
             id="main-banner"
             class="w-full md:w-3/5 flex flex-col text-slate-50 md:pl-10"
@@ -28,30 +23,9 @@ export default function Home() {
               pensamientos.
             </p>
           </div>
-          <Card>
-            <p class="text-center text-sky-100">
-              Escribe un nickname y presiona el botón para crear una sala
-            </p>
-            <input
-              class="w-2/3 md:w-1/2 p-4 mx-auto rounded text-xs md:text-base"
-              type="text"
-              placeholder="Escribe"
-            />
-            <Button
-              href="/room"
-              className={
-                "w-full md:w-1/2 p-1 mx-auto rounded-lg border-b border-sky-800 bg-gradient-to-r from-sky-900 to-sky-500 hover:bg-gradient-to-l text-center text-gray-100 py-4 text-sm md:text-base"
-              }
-            >
-              <span>Crear sala</span>
-            </Button>
-            <p class="text-xs text-sky-800 text-center">
-              Al crear el usuario podrás acceder al enlace para compartir con tu
-              equipo
-            </p>
-          </Card>
+          <CreateRoom />
         </div>
-        <div class="w-full h-full flex flex-col md:flex-row gap-4 justify-center content-center text-sky-50">
+        <div class="w-full h-full flex flex-col md:flex-row gap-4 justify-center content-center text-sky-50 mt-0 md:mt-6">
           <div class="w-full md:w-2/6 flex flex-col gap-2 rounded-lg bg-sky-950 p-8 border border-sky-900">
             <svg class="text-sky-50 fill-current w-14 h-14" viewBox="0 0 24 24">
               <path d="m21.47 4.35-1.34-.56v9.03l2.43-5.86c.41-1.02-.06-2.19-1.09-2.61m-19.5 3.7L6.93 20a2.01 2.01 0 0 0 1.81 1.26c.26 0 .53-.05.79-.16l7.37-3.05c.75-.31 1.21-1.05 1.23-1.79.01-.26-.04-.55-.13-.81L13 3.5a1.95 1.95 0 0 0-1.81-1.25c-.26 0-.52.06-.77.15L3.06 5.45a1.994 1.994 0 0 0-1.09 2.6m16.15-3.8a2 2 0 0 0-2-2h-1.45l3.45 8.34" />
