@@ -1,13 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import LoginButton from "../LoginButton";
+import { useSession } from "next-auth/react";
 
 export default function Header() {
-  
+  const { data: session, status } = useSession();
+
   return (
     <header className="w-full h-16 flex items-center text-sky-100 font-bold px-4 py-6">
       <Link href="/" className="w-1/2 h-1/2 md:w-full md:h-20">
-          <Image unoptimized src={`/assets/litech-32x32.png`} width={32} height={32} alt="logo"/>
+        <Image
+          unoptimized
+          src={`/assets/litech-32x32.png`}
+          width={32}
+          height={32}
+          alt="logo"
+        />
       </Link>
       <ul className="w-full flex gap-4 md:gap-10 items-center justify-center md:justify-end text-sm">
         <li className="w-18">
@@ -27,7 +35,9 @@ export default function Header() {
           </Link>
         </li>
         <li>
-        <LoginButton className={"hover:underline hover:decoration-sky-300 py-4"} />
+          <LoginButton
+            className={"hover:underline hover:decoration-sky-300 py-4"}
+          />
         </li>
         <li className="w-18">
           <a
@@ -43,7 +53,6 @@ export default function Header() {
             </svg>
           </a>
         </li>
-        
       </ul>
     </header>
   );
