@@ -50,17 +50,16 @@ const Room = () => {
 //   if (status === "authenticated") {
     return (
       <LayoutDesk>
-        <h1>Room: {slug}</h1>
-        <div className="w-full flex flex-col md:flex-row gap-4 md:px-4 py-4 justify-center">
-          <aside className="w-full md:w-3/12 rounded-xl flex flex-row flex-wrap md:flex-col gap-4 row-span-1 content-center bg-sky-950 p-8 border border-sky-900">
-            <div className="w-8/12">
+        <div className="w-full flex flex-col lg:flex-row gap-4 md:px-4 py-4 justify-center items-center">
+          <aside className="w-full max-w-64 rounded-xl flex flex-row flex-wrap md:flex-col gap-4 bg-sky-950 p-8 border border-sky-900">
+            <div>
               <h3 className="text-sky-100 font-bold text-lg">Equipo</h3>
               <CopyCurrentURL />
             </div>
             <UserList initialUsers={users} />
           </aside>
           <div className="flex flex-col gap-8 md:pl-10">
-            <div className="ml-auto">
+            <div className="mx-auto md:ml-auto pt-4">
               <PrintCards cards={cards} />
             </div>
             <EmblaCarousel slides={slideElements} options={OPTIONS} />

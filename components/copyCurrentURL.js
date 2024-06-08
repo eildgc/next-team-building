@@ -18,7 +18,7 @@ const CopyCurrentURL = () => {
     <div>
       <Link
         href="/"
-        className="flex items-center underline decoration-1 gap-1 hover:text-blue-300 text-sm text-sky-600 font-semibold" onClick={copyURLToClipboard}
+        className="flex items-center underline decoration-1 gap-1 hover:text-blue-300 text-sm text-sky-600 font-semibold cursor-pointer" onClick={copyURLToClipboard}
       >
         Copiar enlace al room
       </Link>

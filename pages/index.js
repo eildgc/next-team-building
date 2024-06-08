@@ -4,11 +4,11 @@ import CreateRoom from "@/components/CreateRoom";
 export default function Home() {
   return (
     <LayoutDesk>
-      <main class="w-full flex flex-col gap-4 md:gap-36 mx-auto px-20 py-8 relative">
+      <main class="w-full flex flex-col gap-4 md:gap-36 mx-auto px-4 md:px-20 py-8 relative">
         <div class="flex justify-center items-center flex-col md:flex-row gap-4 md:gap-14 mt-14 md:mt-6">
           <div
             id="main-banner"
-            class="w-full md:w-3/5 flex flex-col text-slate-50 md:pl-10"
+            class="w-full md:w-3/5 flex flex-col text-slate-50 md:pl-10 pb-10 md:pb-0"
           >
             <h1 class="w-full font-bold text-xl md:text-3xl text-center">
               Conéctate y fortalece tu equipo: <br />
