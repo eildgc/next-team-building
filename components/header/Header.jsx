@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className="w-full h-16 flex items-center text-sky-100 font-bold px-4 py-6">
-      <Link href="/" className="w-1/2 h-1/2 md:w-full md:h-20">
+      <Link href="/" className="w-10 h-10">
         <Image
           unoptimized
           src={`/assets/litech-32x32.png`}

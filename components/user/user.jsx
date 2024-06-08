@@ -23,17 +23,17 @@ const UserList = ({ initialUsers }) => {
     setSelectedIndex((selectedIndex - 1 + users.length) % users.length);
   };
   return (
-    <ul className="flex flex-col justify-start items-center gap-2">
+    <ul className="flex flex-col items-center gap-2">
       {users?.length > 0 ? (
         <>
           {users?.map((user, index) => (
             <li
               key={index}
-              className={` flex ${
+              className={`flex ${
                 index === selectedIndex
                   ? "bg-cyan-600 font-bold"
                   : "font-base"
-              } p-2 border-sky-900 rounded-lg w-full items-start text-white`}
+              } p-2 border-sky-900 rounded-lg w-full items-center text-white`}
             >
               <Image
                 unoptimized
