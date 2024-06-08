@@ -9,6 +9,8 @@ import { useSession } from "next-auth/react";
 import LoginButton from "@/components/LoginButton";
 import Card from "@/components/card/Card";
 import UserList from "@/components/user/user";
+import PrintCards from "@/components/print/PrintCards";
+import CopyCurrentURL from "@/components/copyCurrentURL";
 
 export default function Room() {
   const [cards, setCards] = useState([]);
@@ -26,23 +28,23 @@ export default function Room() {
   const users = [
     {
       username: "Luis",
-      avatar: "https://loremflickr.com/320/240",
+      avatar: "https://loremflickr.com/32/32",
     },
     {
       username: "Shiroe",
-      avatar: "https://loremflickr.com/320/240",
+      avatar: "https://loremflickr.com/32/32",
     },
     {
       username: "Gojo",
-      avatar: "https://loremflickr.com/320/240",
+      avatar: "https://loremflickr.com/32/32",
     },
     {
       username: "Tomoe",
-      avatar: "https://loremflickr.com/320/240",
+      avatar: "https://loremflickr.com/32/32",
     },
     {
       username: "Stark",
-      avatar: "https://loremflickr.com/320/240",
+      avatar: "https://loremflickr.com/32/32",
     },
   ];
 
@@ -50,19 +52,17 @@ export default function Room() {
     return (
       <LayoutDesk>
         <div className="w-full flex flex-col md:flex-row gap-4 md:px-4 py-4 justify-center">
-          <aside className="w-full md:w-1/3 rounded-xl flex flex-row flex-wrap md:flex-col gap-4 row-span-1 content-center bg-sky-950 p-8 border border-sky-900">
-            <div className="w-full">
+          <aside className="w-full md:w-3/12 rounded-xl flex flex-row flex-wrap md:flex-col gap-4 row-span-1 content-center bg-sky-950 p-8 border border-sky-900">
+            <div className="w-8/12">
               <h3 className="text-sky-100 font-bold text-lg">Equipo</h3>
-              <Link
-                href="/join"
-                className="flex items-center underline decoration-1 gap-1 hover:text-blue-300 text-sm text-sky-600 font-semibold"
-              >
-                Enlace al room
-              </Link>
+              <CopyCurrentURL />
             </div>
             <UserList initialUsers={users} />
           </aside>
           <div className="flex flex-col gap-8 md:pl-10">
+            <div className="ml-auto">
+              <PrintCards cards={cards} />
+            </div>
             <EmblaCarousel slides={slideElements} options={OPTIONS} />
           </div>
         </div>

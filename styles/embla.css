@@ -92,5 +92,14 @@
     left: -100%;
   }  
 
+  .embla__slide__selected {
+    filter: drop-shadow(10px 10px 10px rgba(85, 192, 254, 0.8));
+    padding: 2rem;
+  }
+
+  .embla__slide__noselected {
+    filter: unset;
+    padding: 0;
+  }
 
   

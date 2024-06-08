@@ -42,7 +42,7 @@ export default function Header() {
         <li className="w-18">
           <a
             className="w-6 h-6 hover:underline hover:decoration-sky-950"
-            href="https://github.com/eildgc/team-building"
+            href="https://github.com/eildgc/next-team-building"
             target="_blank"
           >
             <svg

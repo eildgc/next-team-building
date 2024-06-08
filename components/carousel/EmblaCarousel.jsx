@@ -10,6 +10,8 @@ const EmblaCarousel = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
 
   const {
     prevBtnDisabled,
@@ -23,22 +25,31 @@ const EmblaCarousel = (props) => {
     setScrollProgress(progress * 100)
   }, [])
 
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCurrentIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
   useEffect(() => {
     if (!emblaApi) return
-
     onScroll(emblaApi)
+    onSelect();
     emblaApi
-      .on('reInit', onScroll)
-      .on('scroll', onScroll)
-      .on('slideFocus', onScroll)
-  }, [emblaApi, onScroll])
+    .on('reInit', () => {
+      onScroll(emblaApi);
+      onSelect();
+    })
+    .on('scroll', onScroll)
+    .on('select', onSelect)
+    .on('slideFocus', onScroll);
+  }, [emblaApi, onScroll, onSelect]);
 
   return (
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => (
-            <div className="embla__slide" key={index}>
+            <div className={`${index === currentIndex ? 'saturate-100' : 'saturate-0'} embla__slide`} key={index}>
               <div className="embla__slide__number">
                 {slide}
               </div>
