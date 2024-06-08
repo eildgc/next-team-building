@@ -1,7 +1,5 @@
 import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import LayoutDesk from "@/components/layout.jsx/layoutDesk";
-import Image from "next/image";
-import Link from "next/link";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import MainCard from "@/components/mainCard";
@@ -14,7 +12,7 @@ import CopyCurrentURL from "@/components/copyCurrentURL";
 
 export default function Room() {
   const [cards, setCards] = useState([]);
-  const { data: session, status } = useSession();
+  const { data: status, session } = useSession();
 
   useEffect(() => {
     axios.get("/api/cards").then((response) => setCards(response.data));
@@ -48,7 +46,7 @@ export default function Room() {
     },
   ];
 
-  if (status === "authenticated") {
+  // if (status === "authenticated") {
     return (
       <LayoutDesk>
         <div className="w-full flex flex-col md:flex-row gap-4 md:px-4 py-4 justify-center">
@@ -68,20 +66,20 @@ export default function Room() {
         </div>
       </LayoutDesk>
     );
-  } else {
-    return (
-      <LayoutDesk>
-        <div className="flex justify-center items-center mt-40">
-          <Card>
-            <p>Por favor identíficate para continuar</p>
-            <LoginButton
-              className={
-                "w-full md:w-1/2 p-1 mx-auto rounded-lg border-b border-sky-800 bg-gradient-to-r from-sky-900 to-sky-500 hover:bg-gradient-to-l text-center text-gray-100 py-4 text-sm md:text-base"
-              }
-            />
-          </Card>
-        </div>
-      </LayoutDesk>
-    );
-  }
+  // } else {
+    // return (
+    //   <LayoutDesk>
+    //     <div className="flex justify-center items-center mt-40">
+    //       <Card>
+    //         <p>Por favor identíficate para continuar</p>
+    //         <LoginButton
+    //           className={
+    //             "w-full md:w-1/2 p-1 mx-auto rounded-lg border-b border-sky-800 bg-gradient-to-r from-sky-900 to-sky-500 hover:bg-gradient-to-l text-center text-gray-100 py-4 text-sm md:text-base"
+    //           }
+    //         />
+    //       </Card>
+    //     </div>
+    //   </LayoutDesk>
+    // );
+  // }
 }

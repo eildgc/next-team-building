@@ -1,11 +1,22 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import Card from "./card/Card";
 import Button from "./ui/button/Button";
-import UserContainer from "./user/user";
 import Image from "next/image";
+import { useRouter } from 'next/router';
+
+const generateRandomSlug = () => {
+  return Math.random().toString(36).substring(2, 10);
+};
 
 export default function CreateRoom({ btnMessage = "Crear sala" }) {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  const createRoom = () => {
+    const slug = generateRandomSlug();
+    router.push(`/room/${slug}`);
+  };
+
   if (session) {
     return (
       <>
@@ -23,14 +34,13 @@ export default function CreateRoom({ btnMessage = "Crear sala" }) {
               />
               {session.user.name}
             </div>
-            <Button
-              href="/room"
+            <button
               className={
                 "w-48 p-1 mx-auto rounded-lg border-b border-sky-800 bg-gradient-to-r from-sky-900 to-sky-500 hover:bg-gradient-to-l text-center text-gray-100 py-4 text-sm md:text-base"
-              }
+              } onClick={createRoom}
             >
               <span>{btnMessage}</span>
-            </Button>
+            </button>
           </div>
         </div>
       </>

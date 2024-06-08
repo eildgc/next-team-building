@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CloseIcon from "../../public/assets/icon/ic--round-close.svg";
 
 import { useState } from "react";
 
@@ -48,8 +49,8 @@ const UserList = ({ initialUsers }) => {
                 <Image
                   unoptimized
                   className="w-8 transition ease-in-out hover:scale-125 ml-auto"
-                  src="./assets/icon/ic--round-close.svg"
-                  alt=""
+                  src={CloseIcon}
+                  alt="close icon"
                   width={10}
                   height={10}
                 />
