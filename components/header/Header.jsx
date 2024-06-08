@@ -26,14 +26,6 @@ export default function Header() {
             Inicio
           </Link>
         </li>
-        <li className="w-18">
-          <Link
-            href="/pricing"
-            className="hover:underline hover:decoration-sky-300 py-4"
-          >
-            Pricing
-          </Link>
-        </li>
         <li>
           <LoginButton
             className={"hover:underline hover:decoration-sky-300 py-4"}
