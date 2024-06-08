@@ -4,7 +4,7 @@ import CreateRoom from "@/components/CreateRoom";
 export default function Home() {
   return (
     <LayoutDesk>
-      <main class="w-full flex flex-col gap-4 md:gap-36 mx-auto px-20 py-8">
+      <main class="w-full flex flex-col gap-4 md:gap-36 mx-auto px-20 py-8 relative">
         <div class="flex justify-center items-center flex-col md:flex-row gap-4 md:gap-14 mt-14 md:mt-6">
           <div
             id="main-banner"

@@ -6,6 +6,11 @@ export default function LayoutDesk({ children }) {
     <>
       <Header />
       <div className="w-full mt-8 px-10">{children}</div>
+      <div className="cube"></div>
+      <div className="cube"></div>
+      <div className="cube"></div>
+      <div className="cube"></div>
+      <div className="cube"></div>
       <Footer />
     </>
   );

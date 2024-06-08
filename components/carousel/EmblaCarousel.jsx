@@ -12,7 +12,6 @@ const EmblaCarousel = (props) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-
   const {
     prevBtnDisabled,
     nextBtnDisabled,

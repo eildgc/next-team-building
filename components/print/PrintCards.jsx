@@ -53,7 +53,7 @@ const PrintCards = ({ cards }) => {
 
   return (
     <div>
-      <Button onClick={handlePrint} className="w-full font-bold md:w-1/2 p-2 mx-auto rounded-lg border-b border-sky-800 bg-gradient-to-r from-sky-900 to-sky-500 hover:bg-gradient-to-l text-center text-gray-100 py-4 text-sm md:text-base">
+      <Button onClick={handlePrint} className="cursor-pointer w-full font-bold md:w-1/2 p-2 mx-auto rounded-lg border-b border-sky-800 bg-gradient-to-r from-sky-900 to-sky-500 hover:bg-gradient-to-l text-center text-gray-100 py-4 text-sm md:text-base">
       Imprimir Tarjetas
       </Button>
     </div>
